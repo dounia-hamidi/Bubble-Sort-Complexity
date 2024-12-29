@@ -1,0 +1,40 @@
+Analyze Basic Bubble Sort Time Complexity
+
+1. Count Operations:
+Comparisons:
+- For a given input of size n, the algorithm compares each pair of adjacent elements.
+- During the first pass (outer loop iteration 1), n-1 comparisons are made.
+- During the second pass, n-2 comparisons are made.
+- This pattern continues until the last pass, where only 1 comparison is made.
+
+The total number of comparisons, C, can be represented as:
+C = (n-1) + (n-2) + (n-3) + ... + 1
+
+Swaps:
+- A swap is performed whenever the condition arr[j] > arr[j+1] is true. 
+- In the worst case (completely reversed array), the number of swaps equals the number of comparisons.
+
+2. Mathematical Analysis
+Sum of Comparisons:
+C = (n-1) + (n-2) + ... + 1
+This is an arithmetic series with n-1 terms:
+C = (n-1)n / 2
+
+For large n, the dominant term is proportional to n^2, so:
+C ∈ O(n^2)
+
+Worst-Case Time Complexity:
+- Since comparisons dominate the computational cost, the worst-case time complexity of Basic Bubble Sort is:
+O(n^2)
+
+3. Summation Concept
+- The equation (Σ(k=1 to n) n = n * n = n^2) assumes n repetitions of the same value. This would imply n^2 total operations.
+- For Bubble Sort, however, the number of comparisons follows an arithmetic series rather than a constant value:
+  Σ(k=1 to n-1) k = (n(n-1)) / 2
+
+This reflects the fact that the inner loop reduces the number of comparisons by 1 in each iteration. However, the growth rate is still quadratic (O(n^2)).
+
+Summary:
+- Comparisons: Follows an arithmetic series with a total of (n(n-1))/2.
+- Time Complexity: Worst-case is O(n^2).
+- The summation in the image (n^2) aligns with the growth rate of the algorithm's time complexity but doesn’t fully capture the arithmetic progression specific to Bubble Sort.
