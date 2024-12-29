@@ -1,0 +1,46 @@
+Analyze Optimized Bubble Sort Time Complexity
+
+1. Count Operations
+Input Array: [5, 3, 8, 4, 25, 3, 8, 4, 25, 3, 8, 4, 2]
+
+To manually count operations, let’s walk through the optimized Bubble Sort process for this array:
+
+Initial Array:
+[5, 3, 8, 4, 25, 3, 8, 4, 25, 3, 8, 4, 2]
+
+Outer Loop Iteration 1 (i=0):
+Number of comparisons = n - i - 1 = 12
+Swaps:
+
+- Compare 5 and 3: Swap → [3, 5, 8, ...]
+- Compare 5 and 8: No Swap
+- Compare 8 and 4: Swap → [3, 5, 4, 8, ...]
+- Continue similarly...
+
+Total comparisons: 12, Total swaps: 10
+
+Outer Loop Iteration 2 (i=1):
+Number of comparisons = n - i - 1 = 11
+Swaps: Proceed similarly, noting only necessary swaps.
+
+After counting all iterations, we'll have the total number of comparisons and swaps.
+
+2. Mathematical Analysis
+In the optimized version of Bubble Sort:
+- The number of comparisons for an array of size n is:
+  Total Comparisons = (n-1) + (n-2) + ... + 1 = (n-1) * n / 2
+  For n = 13, this is:
+  (13-1) * 13 / 2 = 78 comparisons
+
+- The time complexity is still O(n²) in the worst case but reduced due to fewer comparisons.
+
+3. Best Case
+The best-case scenario occurs when the array is already sorted.
+- Behavior: No swaps are performed, and the algorithm only goes through the comparisons once.
+- Number of Comparisons: n - 1. For n = 13, there are 12 comparisons.
+- Time Complexity: O(n) due to early termination after detecting no swaps.
+
+Summary:
+1. Optimized Bubble Sort reduces unnecessary comparisons in already sorted sections of the array.
+2. Best-case performance improves to O(n) when the array is already sorted.
+3. Worst-case time complexity remains O(n²).
